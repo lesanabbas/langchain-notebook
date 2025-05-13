@@ -1,9 +1,13 @@
+import os
+from dotenv import load_dotenv
 from langchain_mongodb.chat_message_histories import MongoDBChatMessageHistory
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_ollama import OllamaLLM
 
+load_dotenv()
+
 # MongoDB Atlas URI and config
-MONGO_URI = "mongodb+srv://lesanabbas:lesanabbasroot@cluster0.q80jhtm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_URI = os.getenv("MONGO_URI")
 SESSION_ID = "user_1234"
 
 # Setup chat history
